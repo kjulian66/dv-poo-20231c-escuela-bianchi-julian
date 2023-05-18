@@ -1,0 +1,49 @@
+@startuml
+
+Class Escuela {
+	List <Asignacion>
+	public Escuela()
+	public toString()
+	public mostrarEstadoAsignaciones()
+	public addAsignacion()
+}
+
+Class Asignacion {
+	final String APROBADO
+	final String DESAPROBADO
+	Alumno alumno
+	Materia materia
+	Double primerParcial
+	Double segundoParcial
+	Double trabajoPractico
+	
+	public Asignacion (Alumno alumno, Materia materia)
+	public getters&Setters()
+	public toString()
+	public setNotas()
+	public promedio()
+	public mostrarPromedio()
+		
+}
+
+Class Materia {
+	String nombre
+	Integer cuatrimestre
+	public materia(String nombre, String cuatrimestre)
+	public toString()
+}
+
+
+
+Class Alumno {
+	String nombre
+	Integer edad
+	public Alumno (String nombre, Integer edad)
+	public toString()
+}
+
+Escuela "1.." -- "..*"Asignacion
+Asignacion "1.." -- "..*"Materia
+Asignacion "1.." -- "..*"Alumno
+
+@enduml
